@@ -8,4 +8,5 @@ El programa se ha hecho especificamente para trabajar en una maquina virtual Kal
 
 El manejo de errores ha sido muy meticulosamente cuidado, con tal de no poder petar el programa en ningún caso. Tratando errores como los permisos de los ficheros a la hora de encryptar, avisos en caso de interar a reencryptar ficheros, poner extensiones a los directorios,...
 
-El programa ha sido desarollado en Python3, ya que se pueden encontrar multitud de librerias para encryptar de una forma muy segura. En este caso he optado por usar Cryptography.Fernet que proporciona cifrado simétrico y autenticación de datos.
+El programa ha sido desarollado en Python3, ya que se pueden encontrar multitud de librerias para encryptar de una forma muy segura. En este caso he optado por usar Cryptography.Fernet que proporciona cifrado simétrico y autenticación de datos. [Para mas información consular: 
+](https://cryptography.io/en/latest/fernet/)
