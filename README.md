@@ -20,7 +20,6 @@ El programa ha sido desarollado en Python3, ya que se pueden encontrar multitud 
 
 ```python3 stockholm.py -v``` o ```python3 stockholm.py -version``` para mostrar en pantalla la versión del programa.
 
-```python3 stockholm.py -r [KEY]``` o ```python3 stockholm.py -reverse [KEY]``` para desencryptar los archivos previamente encryptados, utilizando la clave que se encuentra en el fichero '_key.key_' creado al encryptar. 
+```python3 stockholm.py -r [KEY]``` o ```python3 stockholm.py -reverse [KEY]``` para desencryptar los archivos previamente encryptados, utilizando la clave que se encuentra en el fichero '_key.key_' creado al encryptar.
 
 ![](https://user-images.githubusercontent.com/86268267/185763451-3231e631-f99a-4d05-8973-a1f6224b1914.mov)
-
