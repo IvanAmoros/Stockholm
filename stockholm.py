@@ -95,7 +95,10 @@ def desencrypt():
 	desencrypt_files = []
 	if os.path.exists(desencrypt_path) == False:
 		print(Fore.YELLOW, "🤔 The path to decrypt doesn't exist... Did you remove the directory?", Style.RESET_ALL)
-		return
+		exit()
+	if os.path.isfile(desencrypt_path):
+		print(Fore.YELLOW, "/home/kali/infection is a file not a directory...", Style.RESET_ALL)
+		exit()
 	for file in os.listdir(desencrypt_path):
 		filename, file_extension = os.path.splitext(desencrypt_path + '/' + file)
 		if file_extension == ".ft":
